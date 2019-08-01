@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card" id="register-form">
+            <div class="card-header">
+                <h4 class="card-title text-center text-white ">Si eres nuevo,crea ya tu cuenta!</h4>
+            </div>
+            <div class="card-body text-center">
+                <form #formRegister="ngForm" (ngSubmit)="onAddUser()">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-at"></i></span>
+                        </div>
+                        <input type="email" name="email" class="form-control" placeholder="Correo" [(ngModel)]="email"
+                            required minlength="8">
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-key"></i></span>
+                        </div>
+                        <input type="password" name="password" class="form-control" placeholder="Contraseña"
+                            [(ngModel)]="password" required minlength="5">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-outline-success"><span class="fa fa-user-plus"></span>
+                            Crear Usuario</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
