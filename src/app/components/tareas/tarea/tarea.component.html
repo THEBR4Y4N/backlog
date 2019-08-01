@@ -1,0 +1,123 @@
+<div class="card mt-5 text-white bg-primary mb-3" style="max-width: 50rem;" id="crear-tarea">
+    <div class="card-header"><h4 class="card-title">Crear Tarea</h4></div>
+    <div class="card-body">
+        <form #formTarea="ngForm" (ngSubmit)="onSubmit(formTarea)">
+            <div class="form-group">
+                <label for="Proyecto" class="card-text">Proyecto:</label>
+                <input type="text" name="Proyecto" id="Proyecto" class="form-control"
+                    [(ngModel)]="tareaService.selectedTarea.Proyecto" placeholder="Ingrese el Nombre del Proyecto">
+            </div>
+            <div class="form-group">
+                <label for="Sprint" class="card-text">Sprint:</label>
+                <input type="text" name="Sprint" id="Sprint" class="form-control" #Sprint="ngModel"
+                    [(ngModel)]="tareaService.selectedTarea.Sprint" placeholder="Ingrese el Sprint del proyecto">
+            </div>
+            <div class="form-group">
+                <label for="Tipo" class="card-text">Tipo:</label>
+                <input type="text" name="Tipo" id="Tipo" class="form-control" #Tipo="ngModel"
+                    [(ngModel)]="tareaService.selectedTarea.Tipo" placeholder="Ingrese el tipo de tarea">
+            </div>
+            <div class="form-group" >
+                <label for="Rol" class="card-text">Rol:</label>
+                <input type="text" name="Rol" id="Rol" class="form-control" #Rol="ngModel"
+                    [(ngModel)]="tareaService.selectedTarea.Rol" placeholder="Ingrese el rol de la tarea">
+            </div>
+            <div class="form-group" >
+                <label for="Historia_de_Usuario" class="card-text">Historia de Usuario:</label>
+                <textarea name="Historia_de_Usuario" id="Historia_de_Usuario" class="form-control" rows="3"
+                    #Historia_de_Usuario="ngModel" [(ngModel)]="tareaService.selectedTarea.Historia_de_Usuario"
+                    placeholder="Ingrese la historia de usuario"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="Criterios_de_Aceptacion" class="card-text">Criterios de Aceptacion:</label>
+                <textarea name="Criterios_de_Aceptacion" id="Criterios_de_Aceptacion" class="form-control" rows="3"
+                    #Criterios_de_Aceptacion="ngModel" [(ngModel)]="tareaService.selectedTarea.Criterios_de_Aceptacion"
+                    placeholder="Ingrese los criterios de aceptación">
+                </textarea>
+            </div>
+            <div class="form-group">
+                <label for="Necesita_id" class="card-text">Necesita id:</label>
+                <input type="text" name="Necesita_id" id="Necesita_id" class="form-control" #Necesita_id="ngModel"
+                    [(ngModel)]="tareaService.selectedTarea.Necesita_id" placeholder="Ingrese el ID dependiente">
+            </div>
+
+            <div class="form-group">
+                <label for="Prioridad" class="card-text">Prioridad:</label>
+                <select class="custom-select" name="Prioridad" id="Prioridad" #Prioridad="ngModel"
+                    [(ngModel)]="tareaService.selectedTarea.Prioridad">
+                    <option value="">No aplica</option>
+                    <option value="Bajo">Bajo</option>
+                    <option value="Medio">Medio</option>
+                    <option value="Alto">Alto</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Riesgo" class="card-text">Riesgo:</label>
+                <select class="custom-select" name="Riesgo" #Riesgo="ngModel"
+                    [(ngModel)]="tareaService.selectedTarea.Riesgo">
+                    <option value="">No aplica</option>
+                    <option value="Bajo">Bajo</option>
+                    <option value="Medio">Medio</option>
+                    <option value="Alto">Alto</option>
+                </select>
+            </div>
+            <div class="form-group" >
+                <label for="Tarea" class="card-text">Tarea:</label>
+                <input type="text" name="Tarea" id="Tarea" class="form-control" #Tarea="ngModel"
+                    [(ngModel)]="tareaService.selectedTarea.Tarea" placeholder="Ingrese la descripción de la tarea">
+            </div>
+            <div class="form-group">
+                <label for="Tiempo_estiamdo" class="card-text">Tiempo estiamdo(Hrs):</label>
+                <input type="number" name="Tiempo_estiamdo" id="Tiempo_estiamdo" class="form-control"
+                    #Tiempo_estiamdo="ngModel" [(ngModel)]="tareaService.selectedTarea.Tiempo_estiamdo"
+                    placeholder="Ingrese el tiempo estimado que le tomara esta tarea">
+            </div>
+            <div class="form-group">
+                <label for="Tiempo_trabajado" class="card-text">Tiempo trabajado(Hrs):</label>
+                <input type="number" name="Tiempo_trabajado" id="Tiempo_trabajado" class="form-control"
+                    #Tiempo_trabajado="ngModel" [(ngModel)]="tareaService.selectedTarea.Tiempo_trabajado"
+                    placeholder="Ingrese el tiempo que le tomó realizar esta tarea">
+            </div>
+            <div class="form-group">
+                <label for="Asignado" class="card-text">Asignado A:</label>
+                <input type="text" name="Asignado" id="Asignado" class="form-control" #Asignado="ngModel"
+                    [(ngModel)]="tareaService.selectedTarea.Asignado"
+                    placeholder="Ingrese el Nombre de la persona resposable de la tarea">
+            </div>
+            <div class="form-group">
+                <label for="Fecha_inicio" class="card-text">Fecha inicio:</label>
+                <input type="date" name="Fecha_inicio" id="Fecha_inicio" class="form-control" #Fecha_inicio="ngModel"
+                    [(ngModel)]="tareaService.selectedTarea.Fecha_inicio"
+                    placeholder="Ingrese la fecha de inicio de la tarea">
+            </div>
+            <div class="form-group">
+                <label for="Fecha_fin_Estimada" class="card-text">Fecha fin (Estimada):</label>
+                <input type="date" name="Fecha_fin_Estimada" id="Fecha_fin_Estimada" class="form-control"
+                    #Fecha_fin_Estimada="ngModel" [(ngModel)]="tareaService.selectedTarea.Fecha_fin_Estimada"
+                    placeholder="Ingrese la fecha final (estimada)para la tarea">
+            </div>
+            <div class="form-group">
+                <label for="Fecha_fin_Estimada" class="card-text">Fecha fin(Real):</label>
+                <input type="date" name="Fecha_fin_Real" id="Fecha_fin_Real" class="form-control"
+                    #Fecha_fin_Real="ngModel" [(ngModel)]="tareaService.selectedTarea.Fecha_fin_Real"
+                    placeholder="Ingrese la fecha final (Real) de la tarea">
+            </div>
+            <div class="form-group">
+                <label for="Estado" class="card-text">Estado:</label>
+                <select class="custom-select" name="Estado" id="Estado" #Estado="ngModel"
+                    [(ngModel)]="tareaService.selectedTarea.Estado">
+                    <option value="Completado">Completado</option>
+                    <option value="No Completado">No completado</option>
+                    <option value="En ejecución">En ejecución</option>
+                    <option value="No realizada">No realizada</option>
+                </select>
+            </div>
+            <div class="form-group text-center">
+                <button class="btn btn-outline-success" type="submit" id="crear">
+                    <i class="fa fa-plus-circle"></i>
+                    Crear Tarea
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

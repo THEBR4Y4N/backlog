@@ -1,0 +1,20 @@
+export class Tarea {
+    $Key:string;
+    Proyecto:string;
+    Sprint:string;
+    Tipo:string;
+    Rol:string;
+    Historia_de_Usuario:string;
+    Criterios_de_Aceptacion:string;
+    Necesita_id:string;
+    Prioridad:string;
+    Riesgo:string;
+    Tarea:string;
+    Tiempo_estiamdo:number;
+    Tiempo_trabajado:number;
+    Asignado:string;
+    Fecha_inicio:string;
+    Fecha_fin_Estimada:string;
+    Fecha_fin_Real:string;
+    Estado:string;
+}
